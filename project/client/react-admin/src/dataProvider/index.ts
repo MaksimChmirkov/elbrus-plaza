@@ -1,184 +1,267 @@
-import { DataProvider } from 'react-admin';
+import { 
+  DataProvider,
+  GetListParams,
+  GetListResult,
+  GetOneParams,
+  GetOneResult,
+  GetManyParams,
+  GetManyResult,
+  GetManyReferenceParams,
+  GetManyReferenceResult,
+  CreateParams,
+  CreateResult,
+  UpdateParams,
+  UpdateResult,
+  UpdateManyParams,
+  UpdateManyResult,
+  DeleteParams,
+  DeleteResult,
+  DeleteManyParams,
+  DeleteManyResult,
+  RaRecord
+} from 'react-admin';
 import { hotelDataProvider } from './hotelsProvider';
-import roomsDataProvider from './roomsProvider';
+import { roomsDataProvider } from './roomsProvider';
 import { bookingsDataProvider } from './bookingsProvider';
 import { clientsDataProvider } from './clientsProvider';
-import { 
-    GetListParams,
-    GetListResult,
-} from 'react-admin';
+
+interface CustomUpdateManyParams<RecordType extends RaRecord = any> extends UpdateManyParams<RecordType> {
+  filter?: {
+    ID_Hotel?: number;
+  };
+}
+
+interface CustomDeleteManyParams<RecordType extends RaRecord = any> extends DeleteManyParams<RecordType> {
+  filter?: {
+    ID_Hotel?: number;
+  };
+}
 
 export const dataProvider: DataProvider = {
-  getList: (resource: string, params: GetListParams): Promise<GetListResult<any>> => {
-        if (resource === 'hotel-rooms') {
-            if (!params.filter || !params.filter.ID_Hotel) {
-                return Promise.reject(new Error(
-                    'Для получения номеров отеля необходимо указать ID_Hotel в параметрах фильтра'
-                ));
-            }
-        }
+  getList: async <RecordType extends RaRecord = any>(
+    resource: string,
+    params: GetListParams
+  ): Promise<GetListResult<RecordType>> => {
+    if (resource === 'hotel-rooms' && !params.filter?.ID_Hotel) {
+      throw new Error('Для получения номеров отеля необходимо указать ID_Hotel');
+    }
 
-      
-        switch (resource) {
-            case 'hotels':
-                return hotelDataProvider.getList(resource, params)
-                    .catch(error => {
-                        console.error('Ошибка при получении списка отелей:', error);
-                        throw new Error('Не удалось загрузить данные об отелях');
-                    });
-
-            case 'rooms':
-            case 'hotel-rooms':
-                return roomsDataProvider.getList(resource, params)
-                    .catch(error => {
-                        console.error(`Ошибка при получении списка номеров (${resource}):`, error);
-                        throw new Error('Не удалось загрузить данные о номерах');
-                    });
-
-            case 'bookings':
-                return bookingsDataProvider.getList(resource, params)
-                    .catch(error => {
-                        console.error('Ошибка при получении списка бронирований:', error);
-                        throw new Error('Не удалось загрузить данные о бронированиях');
-                    });
-
-            case 'clients':
-                return clientsDataProvider.getList(resource, params)
-                    .catch(error => {
-                        console.error('Ошибка при получении списка клиентов:', error);
-                        throw new Error('Не удалось загрузить данные о клиентах');
-                    });
-
-            default:
-                console.error(`Попытка доступа к неизвестному ресурсу: ${resource}`);
-                return Promise.reject(new Error(`Неизвестный ресурс: ${resource}`));
-        }
-    },
-
-  getOne: (resource, params) => {
-    switch (resource) {
-      case 'hotels':
-        return hotelDataProvider.getOne(resource, params);
-      case 'rooms':
-      case 'hotel-rooms': 
-        return roomsDataProvider.getOne(resource, params);
-      case 'bookings':
-        return bookingsDataProvider.getOne(resource, params);
-      case 'clients':
-        return clientsDataProvider.getOne(resource, params);
-      default:
-        throw new Error(`Unknown resource: ${resource}`);
+    try {
+      switch (resource) {
+        case 'hotels':
+          return await hotelDataProvider.getList<RecordType>(resource, params);
+        case 'rooms':
+        case 'hotel-rooms':
+          return await roomsDataProvider.getList<RecordType>(resource, params);
+        case 'bookings':
+          return await bookingsDataProvider.getList<RecordType>(resource, params);
+        case 'clients':
+          return await clientsDataProvider.getList<RecordType>(resource, params);
+        default:
+          throw new Error(`Неизвестный ресурс: ${resource}`);
+      }
+    } catch (error) {
+      console.error(`Ошибка при получении списка ${resource}:`, error);
+      throw new Error(`Не удалось получить список ${resource}`);
     }
   },
 
-  getMany: (resource, params) => {
-    switch (resource) {
-      case 'hotels':
-        return hotelDataProvider.getMany(resource, params);
-      case 'rooms':
-      case 'hotel-rooms':
-        return roomsDataProvider.getMany(resource, params);
-      case 'bookings':
-        return bookingsDataProvider.getMany(resource, params);
-      case 'clients':
-        return clientsDataProvider.getMany(resource, params);
-      default:
-        throw new Error(`Unknown resource: ${resource}`);
+  getOne: async <RecordType extends RaRecord = any>(
+    resource: string,
+    params: GetOneParams
+  ): Promise<GetOneResult<RecordType>> => {
+    try {
+      switch (resource) {
+        case 'hotels':
+          return await hotelDataProvider.getOne<RecordType>(resource, params);
+        case 'rooms':
+        case 'hotel-rooms':
+          return await roomsDataProvider.getOne<RecordType>(resource, params);
+        case 'bookings':
+          return await bookingsDataProvider.getOne<RecordType>(resource, params);
+        case 'clients':
+          return await clientsDataProvider.getOne<RecordType>(resource, params);
+        default:
+          throw new Error(`Неизвестный ресурс: ${resource}`);
+      }
+    } catch (error) {
+      console.error(`Ошибка при получении ${resource}:`, error);
+      throw new Error(`Не удалось получить ${resource} #${params.id}`);
     }
   },
 
-  getManyReference: (resource, params) => {
-    switch (resource) {
-      case 'hotels':
-        return hotelDataProvider.getManyReference(resource, params);
-      case 'rooms':
-      case 'hotel-rooms':
-        return roomsDataProvider.getManyReference(resource, params);
-      case 'bookings':
-        return bookingsDataProvider.getManyReference(resource, params);
-      case 'clients':
-        return clientsDataProvider.getManyReference(resource, params);
-      default:
-        throw new Error(`Unknown resource: ${resource}`);
+  getMany: async <RecordType extends RaRecord = any>(
+    resource: string,
+    params: GetManyParams
+  ): Promise<GetManyResult<RecordType>> => {
+    try {
+      switch (resource) {
+        case 'hotels':
+          return await hotelDataProvider.getMany<RecordType>(resource, params);
+        case 'rooms':
+        case 'hotel-rooms':
+          return await roomsDataProvider.getMany<RecordType>(resource, params);
+        case 'bookings':
+          return await bookingsDataProvider.getMany<RecordType>(resource, params);
+        case 'clients':
+          return await clientsDataProvider.getMany<RecordType>(resource, params);
+        default:
+          throw new Error(`Неизвестный ресурс: ${resource}`);
+      }
+    } catch (error) {
+      console.error(`Ошибка при массовом получении ${resource}:`, error);
+      throw new Error(`Не удалось получить ${resource}`);
     }
   },
 
-  create: (resource, params) => {
-    switch (resource) {
-      case 'hotels':
-        return hotelDataProvider.create(resource, params);
-      case 'rooms':
-        return roomsDataProvider.create(resource, params);
-      case 'bookings':
-        return bookingsDataProvider.create(resource, params);
-      case 'clients':
-        return clientsDataProvider.create(resource, params);
-      default:
-        throw new Error(`Unknown resource: ${resource}`);
+  getManyReference: async <RecordType extends RaRecord = any>(
+    resource: string,
+    params: GetManyReferenceParams
+  ): Promise<GetManyReferenceResult<RecordType>> => {
+    try {
+      switch (resource) {
+        case 'hotels':
+          return await hotelDataProvider.getManyReference<RecordType>(resource, params);
+        case 'rooms':
+        case 'hotel-rooms':
+          return await roomsDataProvider.getManyReference<RecordType>(resource, params);
+        case 'bookings':
+          return await bookingsDataProvider.getManyReference<RecordType>(resource, params);
+        case 'clients':
+          return await clientsDataProvider.getManyReference<RecordType>(resource, params);
+        default:
+          throw new Error(`Неизвестный ресурс: ${resource}`);
+      }
+    } catch (error) {
+      console.error(`Ошибка при получении связанных ${resource}:`, error);
+      throw new Error(`Не удалось получить связанные ${resource}`);
     }
   },
 
-  update: (resource, params) => {
-    switch (resource) {
-      case 'hotels':
-        return hotelDataProvider.update(resource, params);
-      case 'rooms':
-      case 'hotel-rooms':
-        return roomsDataProvider.update(resource, params);
-      case 'bookings':
-        return bookingsDataProvider.update(resource, params);
-      case 'clients':
-        return clientsDataProvider.update(resource, params);
-      default:
-        throw new Error(`Unknown resource: ${resource}`);
+  create: async <RecordType extends Omit<RaRecord, 'id'> = any, ResultRecordType extends RaRecord = RecordType & { id: string }>(
+    resource: string,
+    params: CreateParams<RecordType>
+  ): Promise<CreateResult<ResultRecordType>> => {
+    try {
+      switch (resource) {
+        case 'hotels':
+          return await hotelDataProvider.create<RecordType, ResultRecordType>(resource, params);
+        case 'rooms':
+          return await roomsDataProvider.create<RecordType, ResultRecordType>(resource, params);
+        case 'bookings':
+          return await bookingsDataProvider.create<RecordType, ResultRecordType>(resource, params);
+        case 'clients':
+          return await clientsDataProvider.create<RecordType, ResultRecordType>(resource, params);
+        default:
+          throw new Error(`Неизвестный ресурс: ${resource}`);
+      }
+    } catch (error) {
+      console.error(`Ошибка при создании ${resource}:`, error);
+      throw new Error(`Не удалось создать ${resource}`);
     }
   },
 
-  updateMany: (resource, params) => {
-    switch (resource) {
-      case 'hotels':
-        return hotelDataProvider.updateMany(resource, params);
-      case 'rooms':
-      case 'hotel-rooms': 
-        return roomsDataProvider.updateMany(resource, params);
-      case 'bookings':
-        return bookingsDataProvider.updateMany(resource, params);
-      case 'clients':
-        return clientsDataProvider.updateMany(resource, params);
-      default:
-        throw new Error(`Unknown resource: ${resource}`);
+  update: async <RecordType extends RaRecord = any>(
+    resource: string,
+    params: UpdateParams<RecordType>
+  ): Promise<UpdateResult<RecordType>> => {
+    try {
+      switch (resource) {
+        case 'hotels':
+          return await hotelDataProvider.update<RecordType>(resource, params);
+        case 'rooms':
+        case 'hotel-rooms':
+          return await roomsDataProvider.update<RecordType>(resource, params);
+        case 'bookings':
+          return await bookingsDataProvider.update<RecordType>(resource, params);
+        case 'clients':
+          return await clientsDataProvider.update<RecordType>(resource, params);
+        default:
+          throw new Error(`Неизвестный ресурс: ${resource}`);
+      }
+    } catch (error) {
+      console.error(`Ошибка при обновлении ${resource}:`, error);
+      throw new Error(`Не удалось обновить ${resource} #${params.id}`);
     }
   },
 
-  delete: (resource, params) => {
-    switch (resource) {
-      case 'hotels':
-        return hotelDataProvider.delete(resource, params);
-      case 'rooms':
-      case 'hotel-rooms':
-        return roomsDataProvider.delete(resource, params);
-      case 'bookings':
-        return bookingsDataProvider.delete(resource, params);
-      case 'clients':
-        return clientsDataProvider.delete(resource, params);
-      default:
-        throw new Error(`Unknown resource: ${resource}`);
+  updateMany: async <RecordType extends RaRecord = any>(
+    resource: string,
+    params: CustomUpdateManyParams<RecordType>
+  ): Promise<UpdateManyResult<RecordType>> => {
+    if (resource === 'hotel-rooms' && !params.filter?.ID_Hotel) {
+      throw new Error('Для массового обновления номеров отеля необходимо указать ID_Hotel');
+    }
+
+    try {
+      switch (resource) {
+        case 'hotels':
+          return await hotelDataProvider.updateMany<RecordType>(resource, params);
+        case 'rooms':
+        case 'hotel-rooms':
+          return await roomsDataProvider.updateMany<RecordType>(resource, params);
+        case 'bookings':
+          return await bookingsDataProvider.updateMany<RecordType>(resource, params);
+        case 'clients':
+          return await clientsDataProvider.updateMany<RecordType>(resource, params);
+        default:
+          throw new Error(`Неизвестный ресурс: ${resource}`);
+      }
+    } catch (error) {
+      console.error(`Ошибка при массовом обновлении ${resource}:`, error);
+      throw new Error(`Не удалось обновить ${resource}`);
     }
   },
 
-  deleteMany: (resource, params) => {
-    switch (resource) {
-      case 'hotels':
-        return hotelDataProvider.deleteMany(resource, params);
-      case 'rooms':
-      case 'hotel-rooms':
-        return roomsDataProvider.deleteMany(resource, params);
-      case 'bookings':
-        return bookingsDataProvider.deleteMany(resource, params);
-      case 'clients':
-        return clientsDataProvider.deleteMany(resource, params);
-      default:
-        throw new Error(`Unknown resource: ${resource}`);
+  delete: async <RecordType extends RaRecord = any>(
+    resource: string,
+    params: DeleteParams<RecordType>
+  ): Promise<DeleteResult<RecordType>> => {
+    try {
+      switch (resource) {
+        case 'hotels':
+          return await hotelDataProvider.delete<RecordType>(resource, params);
+        case 'rooms':
+        case 'hotel-rooms':
+          return await roomsDataProvider.delete<RecordType>(resource, params);
+        case 'bookings':
+          return await bookingsDataProvider.delete<RecordType>(resource, params);
+        case 'clients':
+          return await clientsDataProvider.delete<RecordType>(resource, params);
+        default:
+          throw new Error(`Неизвестный ресурс: ${resource}`);
+      }
+    } catch (error) {
+      console.error(`Ошибка при удалении ${resource}:`, error);
+      throw new Error(`Не удалось удалить ${resource} #${params.id}`);
     }
   },
+
+  deleteMany: async <RecordType extends RaRecord = any>(
+    resource: string,
+    params: CustomDeleteManyParams<RecordType>
+  ): Promise<DeleteManyResult<RecordType>> => {
+    if (resource === 'hotel-rooms' && !params.filter?.ID_Hotel) {
+      throw new Error('Для массового удаления номеров отеля необходимо указать ID_Hotel');
+    }
+
+    try {
+      switch (resource) {
+        case 'hotels':
+          return await hotelDataProvider.deleteMany<RecordType>(resource, params);
+        case 'rooms':
+        case 'hotel-rooms':
+          return await roomsDataProvider.deleteMany<RecordType>(resource, params);
+        case 'bookings':
+          return await bookingsDataProvider.deleteMany<RecordType>(resource, params);
+        case 'clients':
+          return await clientsDataProvider.deleteMany<RecordType>(resource, params);
+        default:
+          throw new Error(`Неизвестный ресурс: ${resource}`);
+      }
+    } catch (error) {
+      console.error(`Ошибка при массовом удалении ${resource}:`, error);
+      throw new Error(`Не удалось удалить ${resource}`);
+    }
+  }
 };
