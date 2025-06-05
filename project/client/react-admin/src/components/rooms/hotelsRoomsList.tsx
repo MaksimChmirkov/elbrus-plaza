@@ -13,24 +13,26 @@ import {
 } from 'react-admin';
 
 const RoomsFilter = (props: Omit<FilterProps, 'children'>) => (
-    <Filter>
+    <Filter {...props}>
         <ReferenceInput 
             source="ID_Hotel" 
-            reference="hotels" 
+            reference="hotel" 
             label="Отель"
             alwaysOn
         />
         <SelectInput
-            source="onlyAvailable"
+            source="Room_Availability"
             label="Статус номеров"
             choices={[
-                { id: 'false', name: 'Все номера' },
+                { id: 'all', name: 'Все номера'},
                 { id: 'true', name: 'Только свободные' },
+                { id: 'false', name: 'Только недоступные' },
             ]}
             alwaysOn
         />
     </Filter>
 );
+
 
 const HotelRoomsList: React.FC<ListProps> = (props) => {
     return (

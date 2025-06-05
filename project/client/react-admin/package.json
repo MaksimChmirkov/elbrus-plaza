@@ -11,6 +11,7 @@
     "@types/node": "^16.18.126",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
+    "ra-data-simple-rest": "^5.8.2",
     "react": "^19.1.0",
     "react-admin": "^5.7.3",
     "react-dom": "^19.1.0",

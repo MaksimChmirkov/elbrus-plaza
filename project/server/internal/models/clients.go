@@ -6,6 +6,6 @@ type Client struct {
 	Name_client string	`db:"name_client"`
 	Email_client string	`db:"email_client"`
 	Phone_client string	`db:"phone_client"`
-	Password_client string	`db:"password_client"`
+	//Password_client string	`db:"password_client"`
 	Points_balance int	`db:"points_balance"`
 }
