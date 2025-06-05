@@ -36,7 +36,7 @@ func (s *Storage) CreateRoom(ctx context.Context, room *models.Room) (int64, err
 }
 
 func (s *Storage) UpdateRoom(ctx context.Context, room *models.Room) (error) {
-	query := `update Room set id_hotel = :id_hotel, number_room = :number_room, , room_availability = :room_availability, room_rate_per_night = :room_rate_per_night, view_from_the_windows = :view_from_the_windows, accessibility_for_people_with_disabilities = :accessibility_for_people_with_disabilities, extra_sleeping_place = :extra_sleeping_place where id_room = id_room`
+	query := `update Room set id_hotel = :id_hotel, number_room = :number_room, room_availability = :room_availability, room_rate_per_night = :room_rate_per_night, view_from_the_windows = :view_from_the_windows, accessibility_for_people_with_disabilities = :accessibility_for_people_with_disabilities, extra_sleeping_place = :extra_sleeping_place where id_room = :id_room`
 	if _, err := s.DB.NamedExecContext(ctx, query, room); err != nil {
 		return fmt.Errorf("Couldnt update room %d info: %w", room.ID_Room, err)
 	}

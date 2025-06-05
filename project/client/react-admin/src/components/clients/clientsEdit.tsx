@@ -1,7 +1,15 @@
-import { Edit, SimpleForm, TextInput, NumberInput, PasswordInput } from 'react-admin';
+import { Edit, SimpleForm, TextInput, NumberInput, PasswordInput, useRedirect } from 'react-admin';
 
-export const ClientsEdit = () => (
-    <Edit>
+export const ClientsEdit = () => {
+    const redirect = useRedirect();
+    
+    const onSuccess = (data: any) => {
+        // Перенаправляем на список отелей вместо просмотра созданного
+        redirect('list', 'client');
+    };  
+
+    return (
+    <Edit mutationOptions={{ onSuccess }}>
         <SimpleForm>
             <TextInput source="ID_client" disabled label="ID клиента" />
             <NumberInput source="ID_Hotel" label="ID отеля" />
@@ -12,4 +20,5 @@ export const ClientsEdit = () => (
             <NumberInput source="Points_balance" label="Бонусные баллы" />
         </SimpleForm>
     </Edit>
-);
+    );
+}

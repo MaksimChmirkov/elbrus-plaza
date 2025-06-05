@@ -1,30 +1,15 @@
-import * as React from 'react';
-import {
-    Show,
-    SimpleShowLayout,
-    TextField,
-    NumberField,
-    EmailField,
-    ShowProps,
-} from 'react-admin';
-import { Hotel } from '../../dataProvider/types';
+import { Show, SimpleShowLayout, TextField, NumberField } from 'react-admin';
 
-export const HotelShow: React.FC<ShowProps<Hotel>> = (props) => {
-    return (
-        <Show {...props} title="Просмотр отеля">
-            <SimpleShowLayout>
-                <TextField source="id" label="ID" />
-                <TextField source="name_hotel" label="Название" />
-                <TextField source="adress_hotel" label="Адрес" />
-                <TextField source="phone_hotel" label="Телефон" />
-                <NumberField source="rating_hotel" label="Рейтинг" />
-                <EmailField source="email_hotel" label="Email" />
-                <TextField 
-                    source="description_hotel" 
-                    label="Описание" 
-                    component="pre"
-                />
-            </SimpleShowLayout>
-        </Show>
-    );
-};
+export const HotelShow = () => (
+    <Show>
+        <SimpleShowLayout>
+            <TextField source="ID_Hotel" label="ID" />
+            <TextField source="Name_hotel" label="Название" />
+            <TextField source="Adress_hotel" label="Адрес" />
+            <TextField source="Phone_hotel" label="Телефон" />
+            <NumberField source="Rating_hotel" label="Рейтинг" />
+            <TextField source="Description_hotel" label="Описание" />
+            <TextField source="Email_hotel" label="Email" />
+        </SimpleShowLayout>
+    </Show>
+);
