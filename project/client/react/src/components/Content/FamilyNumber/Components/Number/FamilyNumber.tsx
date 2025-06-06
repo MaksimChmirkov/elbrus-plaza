@@ -1,7 +1,8 @@
 import React from 'react';
 import BaseNumber from './BaseNumber';
 import CarouselFamily from '../CarouselFamilyNumber';
-import { Button, ConfigProvider } from 'antd';
+import { Button } from 'antd';
+import ConfigProvider from 'antd/es/config-provider';
 import { Link } from 'react-router-dom';
 
 const StandardNumber: React.FC = () => (

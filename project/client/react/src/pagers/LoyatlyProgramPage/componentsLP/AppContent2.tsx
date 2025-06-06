@@ -1,8 +1,8 @@
 import React from 'react';
 import { Typography, Row, Col } from 'antd';
-import Bronza from 'C:/Users/lapa_/OneDrive/Рабочий стол/Elbrus-Hotel/my-app/src/picture/bronza.png';
-import Silver from 'C:/Users/lapa_/OneDrive/Рабочий стол/Elbrus-Hotel/my-app/src/picture/silver.png';
-import Gold from 'C:/Users/lapa_/OneDrive/Рабочий стол/Elbrus-Hotel/my-app/src/picture/gold.png';
+import Bronza from 'C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/picture/bronza.png';
+import Silver from 'C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/picture/silver.png';
+import Gold from 'C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/picture/gold.png';
 
 const { Title, Paragraph } = Typography;
 

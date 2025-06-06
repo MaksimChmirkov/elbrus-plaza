@@ -6,10 +6,10 @@ import 'swiper/css/navigation';
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons';
 import { Swiper as SwiperType } from 'swiper/types';
 
-import photo1 from 'C:/Users/lapa_/OneDrive/Рабочий стол/Elbrus-Hotel/my-app/src/picture/ComfortNumber/TreePlace/TPComfortOne.png';
-import photo2 from 'C:/Users/lapa_/OneDrive/Рабочий стол/Elbrus-Hotel/my-app/src/picture/ComfortNumber/TreePlace/TPComfortTwo.png';
-import photo3 from 'C:/Users/lapa_/OneDrive/Рабочий стол/Elbrus-Hotel/my-app/src/picture/ComfortNumber/TreePlace/TPComfortTree.png';
-import photo4 from 'C:/Users/lapa_/OneDrive/Рабочий стол/hotel/my-app/src/picture/White.png';
+import photo1 from 'C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/picture/ComfortNumber/TreePlace/TPComfortOne.png';
+import photo2 from 'C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/picture/ComfortNumber/TreePlace/TPComfortTwo.png';
+import photo3 from 'C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/picture/ComfortNumber/TreePlace/TPComfortTree.png';
+import photo4 from 'C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/picture/White.png';
 
 export default function CarouselTreeNumber() {
     const photos: string[] = [photo1, photo2, photo3, photo4];

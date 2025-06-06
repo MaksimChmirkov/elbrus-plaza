@@ -1,6 +1,6 @@
 import React from 'react';
 import { Layout } from 'antd';
-import Image from 'C:/Users/lapa_/OneDrive/Рабочий стол/Elbrus-Hotel/my-app/src/picture/image 2.png';
+import Image from 'C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/picture/image 2.png';
 import ButtonMainPersonalAccount from './HeaderPersonalAccount/ButtonMainPage';
 import ButtonServicePersonalAccount from './HeaderPersonalAccount/ButtonService';
 import ButtonContactsPersonalAccount from './HeaderPersonalAccount/ButtonContacts';

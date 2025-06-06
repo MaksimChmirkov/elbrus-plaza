@@ -1,5 +1,7 @@
-// SiderBookingForm.tsx
-import { Layout, Typography, Divider, Spin } from 'antd';
+import Layout from 'antd/es/layout'; // Layout - default import
+import Typography from 'antd/es/typography'; // Typography - default import
+import Divider from 'antd/es/divider'; // Divider - default import
+import Spin from 'antd/es/spin'; // Spin - default import
 import { useEffect, useState } from 'react';
 
 const { Title, Text } = Typography;

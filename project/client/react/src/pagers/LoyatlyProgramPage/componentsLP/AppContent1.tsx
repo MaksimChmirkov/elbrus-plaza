@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Layout, Typography, Button } from 'antd';
 import styled from 'styled-components';
-import HotelImage from 'C:/Users/lapa_/OneDrive/Рабочий стол/Elbrus-Hotel/my-app/src/picture/image 95.png';
+import HotelImage from 'C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/picture/image 95.png';
 import RegisterModal from '../RegisterModelLP';
 
 const { Title, Paragraph } = Typography;

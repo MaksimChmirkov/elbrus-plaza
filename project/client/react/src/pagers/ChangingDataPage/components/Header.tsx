@@ -2,7 +2,7 @@ import { Layout, Menu } from 'antd';
 import { Image } from 'antd';
 import type { MenuProps } from 'antd';
 import Container from "./Container";
-import LogoImage from 'C:/Users/lapa_/OneDrive/Рабочий стол/Elbrus-Hotel/my-app/src/picture/image 2.png';
+import LogoImage from 'C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/picture/image 2.png';
 
 const { Header: AntHeader } = Layout;
 

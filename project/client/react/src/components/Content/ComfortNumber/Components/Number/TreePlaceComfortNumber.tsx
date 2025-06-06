@@ -1,8 +1,9 @@
 import React from 'react';
 import BaseNumber from './BaseNumber';
 import CarouselTreeNumber from '../CarouselTreeNumber';
-import { Button, ConfigProvider, message } from 'antd';
+import { Button, message } from 'antd';
 import { Link, useNavigate } from 'react-router-dom';
+import ConfigProvider from 'antd/es/config-provider';
 
 const StandardNumber: React.FC = () => {
   const navigate = useNavigate();

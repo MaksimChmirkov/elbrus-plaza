@@ -5,10 +5,10 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons';
 import { Swiper as SwiperType } from 'swiper/types';
-import photo1 from "C:/Users/lapa_/OneDrive/Рабочий стол/Elbrus-Hotel/my-app/src/pagers/MainPage/image/Frame-9.jpg";
-import photo2 from "C:/Users/lapa_/OneDrive/Рабочий стол/Elbrus-Hotel/my-app/src/pagers/MainPage/image/Frame 13.jpg";
-import photo3 from "C:/Users/lapa_/OneDrive/Рабочий стол/Elbrus-Hotel/my-app/src/pagers/MainPage/image/Frame 11.jpg";
-import photo4 from "C:/Users/lapa_/OneDrive/Рабочий стол/Elbrus-Hotel/my-app/src/pagers/MainPage/image/Frame 10.jpg";
+import photo1 from "C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/pagers/MainPage/image/Frame-9.jpg";
+import photo2 from "C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/pagers/MainPage/image/Frame 13.jpg";
+import photo3 from "C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/pagers/MainPage/image/Frame 11.jpg";
+import photo4 from "C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/pagers/MainPage/image/Frame 10.jpg";
 
 export default function Carousel() {
     const photos: string[] = [photo1, photo2, photo3, photo4];

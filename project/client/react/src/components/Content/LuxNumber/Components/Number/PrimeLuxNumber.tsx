@@ -1,7 +1,8 @@
 import React from 'react';
 import BaseNumber from './BaseNumber';
 import CarouselPrimeLux from '../CarouselPrimeLux';
-import { Button, ConfigProvider, message } from 'antd';
+import { Button, message } from 'antd';
+import ConfigProvider from 'antd/es/config-provider';
 import { Link, useNavigate } from 'react-router-dom';
 
 const ImprovedNumber: React.FC = () => {
