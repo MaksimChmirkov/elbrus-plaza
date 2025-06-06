@@ -12,7 +12,7 @@ const buttonStyle: React.CSSProperties = {
   backgroundColor: '#383B52',
   color: '#fff',
   borderRadius: '0px',
-  padding: '0 250px',
+  padding: '0 180px',
   height: '48px',
   fontSize: '16px',
   fontWeight: 500,
@@ -25,7 +25,7 @@ const layoutStyle: React.CSSProperties = {
 };
 
 const FooterReserve: React.FC = () => (
-  <Link to='/booking'>
+  <Link to='/bookingform'>
       <Layout style={layoutStyle}>
     <Layout.Footer style={footerStyle}>
       <Button 
@@ -42,7 +42,7 @@ const FooterReserve: React.FC = () => (
           e.currentTarget.style.borderColor = '#383B52';
         }}
       >
-        Найти номер
+        Перейти к заполнению данных
       </Button>
     </Layout.Footer>
   </Layout>
