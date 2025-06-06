@@ -1,8 +1,9 @@
 import React from 'react';
 import BaseNumber from './BaseNumber';
 import CarouselFourNumber from '../CarouselFourNumber';
-import { Button, ConfigProvider, message } from 'antd';
+import { Button, message } from 'antd';
 import { Link, useNavigate } from 'react-router-dom';
+import ConfigProvider from 'antd/es/config-provider';
 
 const ImprovedNumber: React.FC = () => {
   const navigate = useNavigate();
@@ -31,6 +32,7 @@ const ImprovedNumber: React.FC = () => {
       console.error('Ошибка:', error);
     }
   };
+
   return (
     <BaseNumber
       CarouselComponent={CarouselFourNumber}
@@ -48,16 +50,16 @@ const ImprovedNumber: React.FC = () => {
             theme={{
               components: {
                 Button: {
-                  colorPrimary: '#383B52',          // Основной цвет кнопки
-                  colorPrimaryHover: '#E3D9D4',     // Цвет фона при наведении
-                  colorTextLightSolid: '#ffffff',    // Цвет текста по умолчанию (белый)
-                  colorPrimaryTextHover: '#000000',  // Цвет текста при наведении (чёрный)
+                  colorPrimary: '#383B52',
+                  colorPrimaryHover: '#E3D9D4',
+                  colorTextLightSolid: '#ffffff',
+                  colorPrimaryTextHover: '#000000',
                 },
               },
             }}
           >
             <Link to="/bookingform" onClick={handleReserveClick}>
-              <Button type="primary" size="large">
+              <Button type="primary" size="large" >
                 Забронировать
               </Button>
             </Link>

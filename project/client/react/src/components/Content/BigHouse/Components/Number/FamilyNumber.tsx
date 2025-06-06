@@ -1,20 +1,26 @@
 import React from 'react';
 import BaseNumber from './BaseNumber';
 import CarouselBigHouse from '../CarouselFamilyNumber';
-import { Button, ConfigProvider } from 'antd';
+import ConfigProvider from 'antd/es/config-provider';
+import { Button, ButtonProps } from 'antd';
 import { Link } from 'react-router-dom';
+
+// Кастомная кнопка с явно указанными пропсами
+const BookButton: React.FC<ButtonProps> = (props) => (
+  <Button type="primary" size="large" {...props} />
+);
 
 const StandardNumber: React.FC = () => (
   <BaseNumber
     CarouselComponent={CarouselBigHouse}
     description={
       <>
-      Идеальное решение для большой семьи или компании друзей — уютный <br />
-      дом с камином, панорамными окнами и отдельными спальнями для <br />
-      комфортного отдыха. Здесь вас ждёт атмосфера горного уюта, <br />
-      современные удобства и потрясающие виды на склоны величественного <br />
-      Эльбруса.
-              <br /><br />
+        Идеальное решение для большой семьи или компании друзей — уютный <br />
+        дом с камином, панорамными окнами и отдельными спальнями для <br />
+        комфортного отдыха. Здесь вас ждёт атмосфера горного уюта, <br />
+        современные удобства и потрясающие виды на склоны величественного <br />
+        Эльбруса.
+        <br /><br />
         <ConfigProvider
           theme={{
             components: {
@@ -28,9 +34,7 @@ const StandardNumber: React.FC = () => (
           }}
         >
           <Link to="/bookingform">
-            <Button type="primary" size="large">
-              Забронировать
-            </Button>
+            <BookButton>Забронировать</BookButton>
           </Link>
         </ConfigProvider>
       </>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Layout, Typography } from 'antd';
-import AchievementsImage from 'C:/Users/lapa_/OneDrive/Рабочий стол/Elbrus-Hotel/my-app/src/picture/image 100.png';
+import AchievementsImage from 'C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/picture/image 100.png';
 
 const { Title, Paragraph } = Typography;
 

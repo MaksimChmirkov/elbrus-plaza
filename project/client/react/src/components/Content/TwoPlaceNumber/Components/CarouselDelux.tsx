@@ -6,11 +6,11 @@ import { ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-import photo1 from 'C:/Users/lapa_/OneDrive/Рабочий стол/hotel/my-app/src/picture/TwoPlace/DeLux/TPDeLuxOne.png';
-import photo2 from 'C:/Users/lapa_/OneDrive/Рабочий стол/hotel/my-app/src/picture/TwoPlace/DeLux/TPDeLuxTwo.png';
-import photo3 from 'C:/Users/lapa_/OneDrive/Рабочий стол/hotel/my-app/src/picture/TwoPlace/DeLux/TPDeLuxTree.png';
-import photo4 from 'C:/Users/lapa_/OneDrive/Рабочий стол/hotel/my-app/src/picture/TwoPlace/DeLux/TPDeLuxFour.png';
-import photo5 from 'C:/Users/lapa_/OneDrive/Рабочий стол/hotel/my-app/src/picture/White.png';
+import photo1 from 'C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/picture/TwoPlace/DeLux/TPDeLuxOne.png';
+import photo2 from 'C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/picture/TwoPlace/DeLux/TPDeLuxTwo.png';
+import photo3 from 'C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/picture/TwoPlace/DeLux/TPDeLuxTree.png';
+import photo4 from 'C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/picture/TwoPlace/DeLux/TPDeLuxFour.png';
+import photo5 from 'C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/picture/White.png';
 
 interface SlideItem {
   src: string;
