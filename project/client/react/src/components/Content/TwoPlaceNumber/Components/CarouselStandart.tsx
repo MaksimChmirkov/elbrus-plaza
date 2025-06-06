@@ -6,10 +6,10 @@ import 'swiper/css/navigation';
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons';
 import { Swiper as SwiperType } from 'swiper/types';
 
-import photo3 from 'C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/picture/TwoPlace/Standart/DvSStart.png';
-import photo2 from 'C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/picture/TwoPlace/Standart/DvSNextOne.png';
-import photo1 from 'C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/picture/TwoPlace/Standart/DvSNextTwo.png';
-import photo4 from 'C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/picture/White.png';
+import photo3 from '../../../../picture/TwoPlace/Standart/DvSStart.png';
+import photo2 from '../../../../picture/TwoPlace/Standart/DvSNextOne.png';
+import photo1 from '../../../../picture/TwoPlace/Standart/DvSNextTwo.png';
+import photo4 from '../../../../picture/White.png';
 
 export default function CarouselStandart() {
     const photos: string[] = [photo1, photo2, photo3, photo4];

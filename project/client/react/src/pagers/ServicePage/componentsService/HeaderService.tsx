@@ -1,6 +1,6 @@
 import React from 'react';
 import { Layout } from 'antd';
-import Image from 'C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/picture/Frame 76.png';
+import Image from '../../../picture/Frame 76.png';
 import ButtonLoyaltyProgramS from './HeaderService/ButtonLoyaltyProgram';
 import ButtonMainPageS from './HeaderService/ButtonMainPage';
 import ButtonContactsS from './HeaderService/ButtonPersonalPage';

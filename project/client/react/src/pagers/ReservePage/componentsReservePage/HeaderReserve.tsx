@@ -1,6 +1,6 @@
 import React from 'react';
 import { Layout, Typography } from 'antd';
-import Image from 'C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/picture/image 2.png';
+import Image from '../../../picture/image-2.png';
 import ButtonMainPageReserve from './HeaderReserve/ButtonMainPage';
 import ButtonViewingNumberReserve from './HeaderReserve/ButtonViewNumber';
 import ButtonContactsReserveP from './HeaderReserve/ButtonContact';

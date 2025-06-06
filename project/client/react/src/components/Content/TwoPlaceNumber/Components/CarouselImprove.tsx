@@ -6,10 +6,10 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons';
 
-import photo1 from 'C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/picture/TwoPlace/Improve/TPImproveOne.png';
-import photo2 from 'C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/picture/TwoPlace/Improve/TPImproveTwo.png';
-import photo3 from 'C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/picture/TwoPlace/Improve/TPImproveTree.png';
-import photo4 from 'C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/picture/White.png';
+import photo1 from '../../../../picture/TwoPlace/Improve/TPImproveOne.png';
+import photo2 from '../../../../picture/TwoPlace/Improve/TPImproveTwo.png';
+import photo3 from '../../../../picture/TwoPlace/Improve/TPImproveTree.png';
+import photo4 from '../../../../picture/White.png';
 
 export default function CarouselImprove() {
     const swiperRef = useRef<SwiperType | null>(null);

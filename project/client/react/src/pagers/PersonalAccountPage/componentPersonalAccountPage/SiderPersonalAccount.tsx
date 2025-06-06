@@ -1,7 +1,7 @@
 import React from 'react';
 import { Layout, Typography } from 'antd';
 import { Button } from 'antd';
-import Bronza from 'C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/picture/bronza.png';
+import Bronza from '../../../picture/bronza.png';
 import { Link } from 'react-router-dom';
 
 

@@ -6,11 +6,11 @@ import 'swiper/css/navigation';
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons';
 import { Swiper as SwiperType } from 'swiper/types';
  
-import photo1 from 'C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/picture/BigHouse/HouseOne.png';
-import photo2 from 'C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/picture/BigHouse/HouseTwo.png';
-import photo3 from 'C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/picture/BigHouse/HouseTree.png';
-import photo4 from 'C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/picture/BigHouse/HouseFour.png';
-import photo5 from 'C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/picture/White.png';
+import photo1 from '../../../../picture/BigHouse/HouseOne.png'
+import photo2 from '../../../../picture/BigHouse/HouseTwo.png';
+import photo3 from '../../../../picture/BigHouse/HouseTree.png';
+import photo4 from '../../../../picture/BigHouse/HouseFour.png';
+import photo5 from '../../../../picture/White.png';
 
 export default function CarouselBigHouse() {
     const photos: string[] = [photo1, photo2, photo3, photo4, photo5];

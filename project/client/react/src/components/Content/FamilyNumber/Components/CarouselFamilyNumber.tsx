@@ -6,9 +6,9 @@ import 'swiper/css/navigation';
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons';
 import { Swiper as SwiperType } from 'swiper/types';
 
-import photo1 from 'C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/picture/FamilyNumber/FamilyOne.png';
-import photo2 from 'C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/picture/FamilyNumber/FamilyTwo.png';
-import photo3 from 'C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/picture/White.png';
+import photo1 from '../../../../picture/FamilyNumber/FamilyOne.png';
+import photo2 from '../../../../picture/FamilyNumber/FamilyTwo.png';
+import photo3 from '../../../../picture/White.png';
 
 export default function CarouselFamily() {
     const photos: string[] = [photo1, photo2, photo3];

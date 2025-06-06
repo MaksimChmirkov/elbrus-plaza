@@ -48,7 +48,7 @@
     }
 
     header {
-      background-image: url("C:\Users\lapa_\OneDrive\Рабочий стол\Elbrus-Hotel\my-app\src\pagers\MainPage\image\Frame 2.png");
+      background-image: url("./picture/Frame 2.png");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -79,7 +79,7 @@
       filter: drop-shadow(0px 0px 20px #b9b9b9);
     }
 
-    header button {
+    .header button {
       font-size: 1.25rem;
       font-weight: 500;
       margin-left: 1px;
@@ -89,7 +89,7 @@
       white-space: nowrap;
     }
 
-    header button:hover {
+    .header button:hover {
       color: #b9b9b9;
       filter: drop-shadow(0px 0px 20px #b9b9b9);
     }
@@ -252,7 +252,7 @@
     .main-page {
       background-color: #212e34;
       padding-top: 40px;
-      padding-bottom: 7px;
+      padding-bottom: 90px;
     }
 
     .first-block {
@@ -388,19 +388,20 @@
     }
 
     .add-service {
-      background-color: #c1c0c0;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
       border: none;
       border-radius: 20px;
       cursor: pointer;
       margin-left: 20px;
-      font-size: 10px;
+      font-size: 13px;
       width: 408px;
-      height: 30px;
+      height: 40px;
       margin-top: 1px;
-      padding-left: 4px;
-      padding-right: 4px;
+      padding-left: 13px;
+      padding-right: 10px;
       position: absolute;
-      top: 725px;
+      top: 605px;
       left: 161px;
     }
 
@@ -533,9 +534,10 @@
     .stats-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 30px;
+      gap: 10px;
       margin-bottom: 40px;
       padding-top: 10px;
+      margin-left: 50px;
     }
 
     .stat-number {
@@ -543,7 +545,7 @@
     }
 
     .hotel-description {
-      margin-left: 80px;
+      margin-left: 50px;
       text-align: left;
     }
 
@@ -553,6 +555,10 @@
       width: 200px;
       margin-top: 600px;
       padding-top: 10px;
+    }
+
+    .section-subtitle {
+      margin-top: -30px;
     }
 
     .info-section {
@@ -680,18 +686,20 @@
     }
 
     .main-info {
-      background-image: url('C:/Users/lapa_/OneDrive/Рабочий стол/Elbrus-Hotel/my-app/src/pagers/MainPage/image//background-info.jpg');
+      background-image: url('./picture/background-info.jpg');
       position: relative;
       bottom: 97px;
+      top: -175px
     }
 
     .events-poster {
-      max-width: 1200px;
-      margin: 40px auto;
+      background-color: #212e34;
+      width: 1550px;
+      height: 500px;
       padding: 0 20px;
       font-family: 'Arial', sans-serif;
       position: relative;
-      bottom: 100px
+      bottom: 175px;
     }
 
     .poster-header {
@@ -699,17 +707,19 @@
       justify-content: space-between;
       align-items: center;
       margin-bottom: 30px;
-      padding-bottom: 15px;
+      padding-bottom: 1px;
 
     }
 
     .poster-title {
       font-size: 2rem;
-      color: black;
-      margin: 0;
+      color: white;
+      margin: 20;
       text-transform: uppercase;
       letter-spacing: 1px;
       font-weight: 700;
+      position: relative;
+      bottom: -20px
     }
 
     .view-all-btn {
@@ -729,11 +739,12 @@
 
     .events-horizontal-container {
       display: flex;
-      gap: 25px;
+      gap: 20px;
       overflow-x: auto;
       padding-bottom: 20px;
       scrollbar-width: thin;
       scrollbar-color: black #f1f1f1;
+      margin-left: 25px;
     }
 
     .events-horizontal-container::-webkit-scrollbar {
@@ -846,13 +857,14 @@
     }
 
     .reviews-section {
+      background-color:#161f23;
       position: relative;
-      bottom: 120px;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1px;
+      bottom: 175px;
+      max-width: 1600px;
+      margin: 2 auto;
+      padding: 40px;
       font-family: 'Arial', sans-serif;
-
+      margin-bottom: -175px;
     }
 
     .section-title {
@@ -867,9 +879,18 @@
     .reviews-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 30px;
+      gap: 20px;
     }
 
+    .section-title1 {
+      font-size: 2.5rem;
+      text-align: center;
+      color: white;
+      margin-bottom: 50px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
     .review-card {
       background: white;
       border-radius: 10px;

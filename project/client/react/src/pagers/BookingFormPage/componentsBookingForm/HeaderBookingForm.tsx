@@ -1,6 +1,6 @@
 import React from 'react';
 import { Layout } from 'antd';
-import Image from 'C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/picture/image 2.png';
+import Image from '../../../picture/image-2.png';
 import ButtonContactsBookingForm from './HeaderButton/ButtonContactsBF';
 import ButtonMainPageBookingForm from './HeaderButton/ButtonMainPageBF';
 import ButtonViewingBookingForm from './HeaderButton/ButtonViewNumber';

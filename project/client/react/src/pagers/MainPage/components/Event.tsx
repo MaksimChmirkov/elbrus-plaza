@@ -2,9 +2,9 @@ import React from "react";
 //import im1 from "C:/Users/lapa_/OneDrive/Рабочий стол/Elbrus-Hotel/my-app/src/pagers/MainPage/image/vine.png";
 //import im2 from "C:/Users/lapa_/OneDrive/Рабочий стол/Elbrus-Hotel/my-app/src/pagers/MainPage/image/bread.png";
 //import im3 from "C:/Users/lapa_/OneDrive/Рабочий стол/Elbrus-Hotel/my-app/src/pagers/MainPage/image/yoga.png";
-import im1 from "C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/pagers/MainPage/image/vine.png";
-import im2 from "C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/pagers/MainPage/image/bread.png";
-import im3 from "C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/pagers/MainPage/image/yoga.png";
+import im1 from "../image/vine.png";
+import im2 from "../image/bread.png";
+import im3 from "../image/yoga.png";
 
 
 interface Event {
@@ -48,7 +48,6 @@ const EventsPoster: React.FC = () => {
     <section className="events-poster">
       <div className="poster-header">
         <h2 className="poster-title">АФИША МЕРОПРИЯТИЙ</h2>
-        <button className="view-all-btn">СМОТРЕТЬ ВСЕ &gt;</button>
       </div>
       
       <div className="events-horizontal-container">
