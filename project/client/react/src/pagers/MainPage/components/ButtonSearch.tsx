@@ -1,12 +1,13 @@
 import { ConfigProvider, Button } from 'antd';
 import type { ThemeConfig } from 'antd'; 
+import { SearchOutlined } from '@ant-design/icons';
 import React, { CSSProperties, useState } from 'react';
 
 const buttonStyle: CSSProperties = {
   position: 'absolute',
-  top: '307px',
-  right: '90px',
-  height: '90px',
+  top: '500px',
+  right: '860px',
+  height: '120px',
   width: '120px',
   display: 'flex',
   flexDirection: 'column',
@@ -16,7 +17,7 @@ const buttonStyle: CSSProperties = {
 };
 
 const textStyle: CSSProperties = {
-  margin: '20px',
+  margin: 0,
   padding: 0,
   lineHeight: '1',
 };
@@ -25,7 +26,7 @@ interface ButtonSearchProps {
   iconSize?: number;
 }
 
-const ButtonSearch: React.FC<ButtonSearchProps> = ({ }) => {
+const ButtonSearch: React.FC<ButtonSearchProps> = ({ iconSize = 28 }) => {
   const [hovered, setHovered] = useState(false);
 
   const theme: ThemeConfig = {
@@ -52,7 +53,14 @@ const ButtonSearch: React.FC<ButtonSearchProps> = ({ }) => {
           flexDirection: 'column', 
           alignItems: 'center' 
         }}>
-          <span style={textStyle}>Сохранить <br /> изменения</span>
+          <SearchOutlined style={{ 
+            color: hovered ? '#A0A0A0' : '#ffffff',
+            fontSize: iconSize,
+            margin: 0,
+          }} />
+          <span style={textStyle}>
+            Забронировать
+          </span>
         </div>
       </Button>
     </ConfigProvider>

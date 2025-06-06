@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const StyledButton = styled(Button)`
   position: absolute;
   top: 6%;
-  left: 5%;
+  left: 52%;
   color: black !important;
   background-color: transparent;
   border: none;

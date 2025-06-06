@@ -7,7 +7,7 @@ import HeaderService from './componentsReservePage/HeaderReserve';
 
 const layoutStyle: React.CSSProperties = {
   width: '100%',
-  minHeight: '100vh', // Занимает всю высоту viewport
+  minHeight: '100vh', 
 };
 
 const AppReserve: React.FC = () => (
