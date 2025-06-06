@@ -6,10 +6,10 @@ import 'swiper/css/navigation';
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons';
 import { Swiper as SwiperType } from 'swiper/types';
 
-import photo3 from 'C:/Users/lapa_/OneDrive/Рабочий стол/Elbrus-Hotel/my-app/src/picture/Lux/Lux/LuxFree.png';
-import photo2 from 'C:/Users/lapa_/OneDrive/Рабочий стол/Elbrus-Hotel/my-app/src/picture/Lux/Lux/LuxTwo.png';
-import photo1 from 'C:/Users/lapa_/OneDrive/Рабочий стол/Elbrus-Hotel/my-app/src/picture/Lux/Lux/LuxOne.png';
-import photo4 from 'C:/Users/lapa_/OneDrive/Рабочий стол/hotel/my-app/src/picture/White.png';
+import photo3 from 'C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/picture/Lux/Lux/LuxFree.png';
+import photo2 from 'C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/picture/Lux/Lux/LuxTwo.png';
+import photo1 from 'C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/picture/Lux/Lux/LuxOne.png';
+import photo4 from 'C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/picture/White.png';
 
 export default function CarouselLux() {
     const photos: string[] = [photo1, photo2, photo3, photo4];

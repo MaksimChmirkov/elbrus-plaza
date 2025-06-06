@@ -1,10 +1,38 @@
 import React from 'react';
 import BaseNumber from './BaseNumber';
 import CarouselPrimeLux from '../CarouselPrimeLux';
-import { Button, ConfigProvider } from 'antd';
-import { Link } from 'react-router-dom';
+import { Button, message } from 'antd';
+import ConfigProvider from 'antd/es/config-provider';
+import { Link, useNavigate } from 'react-router-dom';
 
-const ImprovedNumber: React.FC = () => (
+const ImprovedNumber: React.FC = () => {
+    const navigate = useNavigate();
+
+  const handleReserveClick = async (e: React.MouseEvent) => {
+    e.preventDefault(); 
+    
+    try {
+      const response = await fetch('http://localhost:8787/api/reserve', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          roomType: 'Двухместный стандарт',
+        }),
+      });
+
+      if (response.ok) {
+        navigate('/reserve');
+      } else {
+        throw new Error('Ошибка при отправке данных');
+      }
+    } catch (error) {
+      message.error('Произошла ошибка при бронировании');
+      console.error('Ошибка:', error);
+    }
+  };
+  return(
   <BaseNumber
     CarouselComponent={CarouselPrimeLux}
     description={
@@ -27,7 +55,7 @@ const ImprovedNumber: React.FC = () => (
             },
           }}
         >
-          <Link to="/bookingform">
+          <Link to="/bookingform" onClick={handleReserveClick}>
             <Button type="primary" size="large">
               Забронировать
             </Button>
@@ -37,5 +65,6 @@ const ImprovedNumber: React.FC = () => (
     }
   />
 );
+};
 
 export default ImprovedNumber;

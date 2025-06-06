@@ -1,6 +1,5 @@
 import { ConfigProvider, Button } from 'antd';
 import type { ThemeConfig } from 'antd'; 
-import { SearchOutlined } from '@ant-design/icons';
 import React, { CSSProperties, useState } from 'react';
 
 const buttonStyle: CSSProperties = {
@@ -17,7 +16,7 @@ const buttonStyle: CSSProperties = {
 };
 
 const textStyle: CSSProperties = {
-  margin: 0,
+  margin: '20px',
   padding: 0,
   lineHeight: '1',
 };
@@ -26,7 +25,7 @@ interface ButtonSearchProps {
   iconSize?: number;
 }
 
-const ButtonSearch: React.FC<ButtonSearchProps> = ({ iconSize = 28 }) => {
+const ButtonSearch: React.FC<ButtonSearchProps> = ({ }) => {
   const [hovered, setHovered] = useState(false);
 
   const theme: ThemeConfig = {
@@ -53,12 +52,7 @@ const ButtonSearch: React.FC<ButtonSearchProps> = ({ iconSize = 28 }) => {
           flexDirection: 'column', 
           alignItems: 'center' 
         }}>
-          <SearchOutlined style={{ 
-            color: hovered ? '#A0A0A0' : '#ffffff',
-            fontSize: iconSize,
-            margin: 0,
-          }} />
-          <span style={textStyle}>Найти номер</span>
+          <span style={textStyle}>Сохранить <br /> изменения</span>
         </div>
       </Button>
     </ConfigProvider>

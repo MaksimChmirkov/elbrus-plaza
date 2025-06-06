@@ -1,7 +1,12 @@
 import React from "react";
-import avatar1 from "C:/Users/lapa_/OneDrive/Рабочий стол/Elbrus-Hotel/my-app/src/pagers/MainPage/image/lera.png"; 
-import avatar2 from "C:/Users/lapa_/OneDrive/Рабочий стол/Elbrus-Hotel/my-app/src/pagers/MainPage/image/yarik.png";
-import avatar3 from "C:/Users/lapa_/OneDrive/Рабочий стол/Elbrus-Hotel/my-app/src/pagers/MainPage/image/nikita.png";
+//import avatar1 from "C:/Users/lapa_/OneDrive/Рабочий стол/Elbrus-Hotel/my-app/src/pagers/MainPage/image/lera.png"; 
+//import avatar2 from "C:/Users/lapa_/OneDrive/Рабочий стол/Elbrus-Hotel/my-app/src/pagers/MainPage/image/yarik.png";
+//import avatar3 from "C:/Users/lapa_/OneDrive/Рабочий стол/Elbrus-Hotel/my-app/src/pagers/MainPage/image/nikita.png";
+
+import avatar1 from "C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/pagers/MainPage/image/lera.png"; 
+import avatar2 from "C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/pagers/MainPage/image/yarik.png";
+import avatar3 from "C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/pagers/MainPage/image/nikita.png";
+
 
 interface Review {
   id: number;

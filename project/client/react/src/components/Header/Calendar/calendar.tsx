@@ -6,6 +6,21 @@ import { DatePickerInput } from './ComponentsCalendar/Card/DatePickerInput.tsx';
 import { CalendarPopup } from './ComponentsCalendar/Popup/CalendarPopup.tsx';
 
 type ActiveInputType = 'checkIn' | 'checkOut' | null;
+
+interface BookingDates {
+    checkIn: Date | null;
+    checkOut: Date | null;
+}
+
+export let Booking_dates: BookingDates = {
+    checkIn: null,
+    checkOut: null
+};
+
+export const updateBookingDates = (newDates: Partial<BookingDates>) => {
+    Booking_dates = { ...Booking_dates, ...newDates };
+};
+
 const contentStyle: React.CSSProperties = {
     alignItems: 'flex-start',
     marginTop: '230px',

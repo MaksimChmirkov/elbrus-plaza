@@ -70,12 +70,12 @@ const ButtonContactsBookingForm: React.FC<ContactButtonProps> = ({ onClick }) =>
             onOpenChange={setPopoverVisible}
             placement="bottom"
             align={{
-                offset: [0, 0], // Убрал смещение по умолчанию
+                offset: [0, 0], 
             }}
             overlayStyle={{
                 position: 'absolute',
-                left: '72%', // Такое же значение как у кнопки
-                top: 'calc(6% + 40px)', // Высота кнопки примерно 40px
+                left: '72%', 
+                top: 'calc(6% + 40px)', 
                 borderRadius: '8px',
                 boxShadow: '0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08)',
             }}

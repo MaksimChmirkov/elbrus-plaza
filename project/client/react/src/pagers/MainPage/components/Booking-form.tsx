@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import AppLayouts from './Calendar/calendar';
 import ButtonSearch from "./ButtonSearch";
 
@@ -48,7 +48,8 @@ const BookingForm: React.FC = () => {
       <div className='booking-form'>
         <form onSubmit={handleSubmit}>
           <div className='form-container'>
-            <Link to='/reserve'>
+            <Link to='/reserve'> </Link>
+            <Link to='/numbers'>
               <ButtonSearch/>
             </Link>
           </div>

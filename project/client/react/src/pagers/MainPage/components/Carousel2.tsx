@@ -5,18 +5,30 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons';
 import { Swiper as SwiperType } from 'swiper/types';
-import photo1 from 'C:/Users/lapa_/OneDrive/Рабочий стол/Elbrus-Hotel/my-app/src/pagers/MainPage/image/room1.png';
+/*import photo1 from 'C:/Users/lapa_/OneDrive/Рабочий стол/Elbrus-Hotel/my-app/src/pagers/MainPage/image/room1.png';
 import photo2 from 'C:/Users/lapa_/OneDrive/Рабочий стол/Elbrus-Hotel/my-app/src/pagers/MainPage/image/room2.png';
 import photo3 from 'C:/Users/lapa_/OneDrive/Рабочий стол/Elbrus-Hotel/my-app/src/pagers/MainPage/image/room3.png';
 import photo4 from 'C:/Users/lapa_/OneDrive/Рабочий стол/Elbrus-Hotel/my-app/src/pagers/MainPage/image/room4.png';
 import photo5 from 'C:/Users/lapa_/OneDrive/Рабочий стол/Elbrus-Hotel/my-app/src/pagers/MainPage/image/room5.png';
 import photo6 from 'C:/Users/lapa_/OneDrive/Рабочий стол/Elbrus-Hotel/my-app/src/pagers/MainPage/image/room6.png';
 import photo7 from 'C:/Users/lapa_/OneDrive/Рабочий стол/Elbrus-Hotel/my-app/src/pagers/MainPage/image/room7.png';
-import photo8 from 'C:/Users/lapa_/OneDrive/Рабочий стол/Elbrus-Hotel/my-app/src/pagers/MainPage/image/room8.png';
+import photo8 from 'C:/Users/lapa_/OneDrive/Рабочий стол/Elbrus-Hotel/my-app/src/pagers/MainPage/image/room8.png';*/
 
 // Дополнительные фото для детального просмотра
-import detailPhoto1 from 'C:/Users/lapa_/OneDrive/Рабочий стол/Elbrus-Hotel/my-app/src/pagers/MainPage/image/room1.png';
-import detailPhoto2 from 'C:/Users/lapa_/OneDrive/Рабочий стол/Elbrus-Hotel/my-app/src/pagers/MainPage/image/room2.png';
+//import detailPhoto1 from 'C:/Users/lapa_/OneDrive/Рабочий стол/Elbrus-Hotel/my-app/src/pagers/MainPage/image/room1.png';
+//import detailPhoto2 from 'C:/Users/lapa_/OneDrive/Рабочий стол/Elbrus-Hotel/my-app/src/pagers/MainPage/image/room2.png';
+import photo1 from 'C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/pagers/MainPage/image/room1.png';
+import photo2 from 'C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/pagers/MainPage/image/room2.png';
+import photo3 from 'C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/pagers/MainPage/image/room3.png';
+import photo4 from 'C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/pagers/MainPage/image/room4.png';
+import photo5 from 'C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/pagers/MainPage/image/room5.png';
+import photo6 from 'C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/pagers/MainPage/image/room6.png';
+import photo7 from 'C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/pagers/MainPage/image/room7.png';
+import photo8 from 'C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/pagers/MainPage/image/room8.png';
+
+// Дополнительные фото для детального просмотра
+import detailPhoto1 from 'C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/pagers/MainPage/image/room1.png';
+import detailPhoto2 from 'C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/pagers/MainPage/image/room2.png';
 // ... добавьте остальные детальные фото
 
 export default function Carousel() {

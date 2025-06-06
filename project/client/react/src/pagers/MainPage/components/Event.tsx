@@ -1,7 +1,11 @@
 import React from "react";
-import im1 from "C:/Users/lapa_/OneDrive/Рабочий стол/Elbrus-Hotel/my-app/src/pagers/MainPage/image/vine.png";
-import im2 from "C:/Users/lapa_/OneDrive/Рабочий стол/Elbrus-Hotel/my-app/src/pagers/MainPage/image/bread.png";
-import im3 from "C:/Users/lapa_/OneDrive/Рабочий стол/Elbrus-Hotel/my-app/src/pagers/MainPage/image/yoga.png";
+//import im1 from "C:/Users/lapa_/OneDrive/Рабочий стол/Elbrus-Hotel/my-app/src/pagers/MainPage/image/vine.png";
+//import im2 from "C:/Users/lapa_/OneDrive/Рабочий стол/Elbrus-Hotel/my-app/src/pagers/MainPage/image/bread.png";
+//import im3 from "C:/Users/lapa_/OneDrive/Рабочий стол/Elbrus-Hotel/my-app/src/pagers/MainPage/image/yoga.png";
+import im1 from "C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/pagers/MainPage/image/vine.png";
+import im2 from "C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/pagers/MainPage/image/bread.png";
+import im3 from "C:/Users/lapa_/OneDrive/Рабочий стол/elbrus-plaza/project/client/react/src/pagers/MainPage/image/yoga.png";
+
 
 interface Event {
   id: number;

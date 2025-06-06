@@ -1,10 +1,38 @@
 import React from 'react';
 import BaseNumber from './BaseNumber';
 import CarouselImproved from '../CarouselImprove';
-import { Button, ConfigProvider } from 'antd';
-import { Link } from 'react-router-dom';
+import { Button, message } from 'antd';
+import ConfigProvider from 'antd/es/config-provider';
+import { Link, useNavigate } from 'react-router-dom';
 
-const ImprovedNumber: React.FC = () => (
+const ImprovedNumber: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleReserveClick = async (e: React.MouseEvent) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch('http://localhost:8787/api/reserve', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          roomType: 'Улучшенный двухместный',
+        }),
+      });
+
+      if (response.ok) {
+        navigate('/reserve');
+      } else {
+        throw new Error('Ошибка при отправке данных');
+      }
+    } catch (error) {
+      message.error('Произошла ошибка при бронировании');
+      console.error('Ошибка:', error);
+    }
+  };
+  return (
   <BaseNumber
     CarouselComponent={CarouselImproved}
     description={
@@ -17,15 +45,15 @@ const ImprovedNumber: React.FC = () => (
           theme={{
             components: {
               Button: {
-                colorPrimary: '#383B52',          // Основной цвет кнопки
-                colorPrimaryHover: '#E3D9D4',     // Цвет фона при наведении
-                colorTextLightSolid: '#ffffff',    // Цвет текста по умолчанию (белый)
-                colorPrimaryTextHover: '#000000',  // Цвет текста при наведении (чёрный)
+                colorPrimary: '#383B52',          
+                colorPrimaryHover: '#E3D9D4',     
+                colorTextLightSolid: '#ffffff',    
+                colorPrimaryTextHover: '#000000',  
               },
             },
           }}
         >
-          <Link to="/bookingform">
+          <Link to="/bookingform" onClick={handleReserveClick}>
             <Button type="primary" size="large">
               Забронировать
             </Button>
@@ -35,5 +63,6 @@ const ImprovedNumber: React.FC = () => (
     }
   />
 );
+};
 
 export default ImprovedNumber;
