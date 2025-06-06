@@ -5,6 +5,7 @@ import (
 	"backend/internal/storage/postgres"
 	"database/sql"
 	"encoding/json"
+	"fmt"
 	"log"
 	"net/http"
 	"strconv"
@@ -144,9 +145,11 @@ func (h *HotelHandler) CreateHotel(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	fmt.Println(hotel)
+
 	id, err := h.storage.CreateHotel(r.Context(), &hotel) 
 	if err != nil {
-		http.Error(w, "Failed to create room", http.StatusInternalServerError)
+		http.Error(w, "Failed to create hotel", http.StatusInternalServerError)
 		log.Print(err)
 		return
 	}

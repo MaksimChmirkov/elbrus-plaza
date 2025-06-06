@@ -37,7 +37,7 @@ func main() {
 		log.Fatalf("Ошибка чтения конфига: %v", err)
 	}
 
-	// Загрузка конфига БД
+	
 	DBInfo := postgres.NewDBInfo(
 		viper.GetString("database.host"),
 		viper.GetInt("database.port"),
@@ -64,14 +64,14 @@ func main() {
 	roomHandler := handlers.NewRoomHandler(storage)
 	hotelHandler := handlers.NewHotelHandler(storage)
 	eventsHandler := handlers.NewEventsHandler(storage)
-	bookingHandler := handlers.NewBookingHandler(storage)
+	//bookingHandler := handlers.NewBookingHandler(storage)
 	add_servHandler := handlers.NewAdd_ServHandler(storage)
 	clientHandler := handlers.NewClientHandler(storage)
 	
 	roomHandler.RegisterRoutes(router)
 	hotelHandler.RegisterRoutes(router)
 	eventsHandler.RegisterRoutes(router)
-	bookingHandler.RegisterRoutes(router)
+	//bookingHandler.RegisterRoutes(router)
 	add_servHandler.RegisterRoutes(router)
 	clientHandler.RegisterRoutes(router)
 	
